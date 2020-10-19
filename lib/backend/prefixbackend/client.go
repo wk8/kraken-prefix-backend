@@ -24,10 +24,12 @@ func (*factory) Create(confRaw interface{}, authConfRaw interface{}) (backend.Cl
 	if err != nil {
 		return nil, errors.New("marshal prefix config")
 	}
+
 	var config Config
 	if err := yaml.Unmarshal(confBytes, &config); err != nil {
 		return nil, errors.New("unmarshal prefix config")
 	}
+
 	return NewClient(config, authConfRaw)
 }
 
@@ -66,6 +68,7 @@ func compilePrefixRegex(config Config) (*regexp.Regexp, error) {
 	}
 
 	regex, err := regexp.Compile(rawRegex)
+
 	return regex, errors.Wrapf(err, "unable to compile regex %q", rawRegex)
 }
 
@@ -87,21 +90,25 @@ func buildWrappedBackend(config Config, authConfRaw interface{}) (backend.Client
 	}
 
 	backend, err := factory.Create(backendConfig, authConfRaw)
+
 	return backend, errors.Wrapf(err, "unable to create wrapped backend of type %q", backendName)
 }
 
 func (c *Client) Stat(namespace, name string) (*core.BlobInfo, error) {
 	trimmedNamespace, trimmedName := c.trimPrefixFromNames(namespace, name)
+
 	return c.backend.Stat(trimmedNamespace, trimmedName)
 }
 
 func (c *Client) Upload(namespace, name string, src io.Reader) error {
 	trimmedNamespace, trimmedName := c.trimPrefixFromNames(namespace, name)
+
 	return c.backend.Upload(trimmedNamespace, trimmedName, src)
 }
 
 func (c *Client) Download(namespace, name string, dst io.Writer) error {
 	trimmedNamespace, trimmedName := c.trimPrefixFromNames(namespace, name)
+
 	return c.backend.Download(trimmedNamespace, trimmedName, dst)
 }
 
@@ -113,7 +120,7 @@ func (c *Client) trimPrefixFromNames(namespace, name string) (trimmedNamespace, 
 	trimmedNamespace = c.trimPrefixFromString(namespace)
 
 	splitName := strings.SplitN(name, ":", 2)
-	if len(splitName) == 2 {
+	if len(splitName) > 1 {
 		splitName[0] = c.trimPrefixFromString(splitName[0])
 		trimmedName = strings.Join(splitName, ":")
 	} else {

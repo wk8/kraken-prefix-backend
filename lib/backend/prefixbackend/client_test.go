@@ -3,11 +3,9 @@ package prefixbackend
 import (
 	"testing"
 
-	"github.com/uber/kraken/lib/backend/registrybackend"
-
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	_ "github.com/uber/kraken/lib/backend/registrybackend"
+	"github.com/uber/kraken/lib/backend/registrybackend"
 )
 
 var testConfig = Config{

@@ -3,6 +3,7 @@ module github.com/wk8/kraken-prefix-backend
 go 1.15
 
 require (
+	github.com/daixiang0/gci v0.2.4 // indirect
 	github.com/pkg/errors v0.8.0
 	github.com/stretchr/testify v1.3.0
 	github.com/uber/kraken v0.1.4
