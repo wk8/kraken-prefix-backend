@@ -6,9 +6,9 @@ all: test lint images
 KRAKEN_APPS = \
 	agent \
 	build-index \
+	origin \
 	proxy \
-	tracker \
-	origin
+	tracker
 
 .PHONY: images
 images:
