@@ -11,7 +11,7 @@ import (
 	_ "github.com/uber/kraken/lib/backend/s3backend"
 	_ "github.com/uber/kraken/lib/backend/testfs"
 
-	_ "github.com/wk8/kraken-wrapper-backend/lib/backend/prefixbackend"
+	_ "github.com/wk8/kraken-prefix-backend/lib/backend/prefixbackend"
 )
 
 func main() {

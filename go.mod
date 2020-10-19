@@ -1,4 +1,4 @@
-module github.com/wk8/kraken-wrapper-backend
+module github.com/wk8/kraken-prefix-backend
 
 go 1.15
 
@@ -6,7 +6,7 @@ require (
 	github.com/pkg/errors v0.8.0
 	github.com/stretchr/testify v1.3.0
 	github.com/uber/kraken v0.1.4
-	golang.org/x/tools v0.0.0-20201017001424-6003fad69a88 // indirect
+	golang.org/x/tools v0.0.0-20201019160706-0a3dcccdcf7a // indirect
 	gopkg.in/yaml.v2 v2.2.2
 )
 

@@ -4,7 +4,7 @@ FROM golang:1.15 AS dependencies
 
 RUN apt-get update && apt-get install -y jq
 
-WORKDIR /go/src/github.com/wk8/kraken-wrapper-backend
+WORKDIR /go/src/github.com/wk8/kraken-prefix-backend
 
 COPY go.* ./
 RUN go mod download
@@ -24,7 +24,7 @@ ARG KRAKEN_APP
 RUN test -n "$KRAKEN_APP"
 
 COPY . .
-RUN GOOS=linux GOARCH=amd64 go build -i -o kraken-$KRAKEN_APP -gcflags '-N -l' github.com/wk8/kraken-wrapper-backend/$KRAKEN_APP
+RUN GOOS=linux GOARCH=amd64 go build -i -o kraken-$KRAKEN_APP -gcflags '-N -l' github.com/wk8/kraken-prefix-backend/$KRAKEN_APP
 
 ###
 
@@ -43,6 +43,6 @@ ARG KRAKEN_APP
 
 RUN mkdir -vp -m 777 /var/log/kraken/kraken-$KRAKEN_APP /var/cache/kraken/kraken-$KRAKEN_APP
 
-COPY --from=builder /go/src/github.com/wk8/kraken-wrapper-backend/kraken-$KRAKEN_APP /usr/bin/kraken-$KRAKEN_APP
+COPY --from=builder /go/src/github.com/wk8/kraken-prefix-backend/kraken-$KRAKEN_APP /usr/bin/kraken-$KRAKEN_APP
 
 WORKDIR /etc/kraken
