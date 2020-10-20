@@ -11,4 +11,4 @@ require (
 	gopkg.in/yaml.v2 v2.2.2
 )
 
-replace github.com/uber/kraken => github.com/wk8/kraken v0.1.5-0.20201018191115-bc73e6312229
+replace github.com/uber/kraken => github.com/wk8/kraken v0.0.0-20201020061850-db5ac2aa0c97
