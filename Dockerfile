@@ -1,9 +1,4 @@
-# TODO wkpo arm64?? see https://www.docker.com/blog/multi-arch-images/
-# TODO wkpo version tag?
-
 FROM golang:1.15 AS dependencies
-
-RUN apt-get update && apt-get install -y jq
 
 WORKDIR /go/src/github.com/wk8/kraken-prefix-backend
 
@@ -19,7 +14,7 @@ ARG KRAKEN_APP
 RUN test -n "$KRAKEN_APP"
 
 COPY . .
-RUN GOOS=linux GOARCH=amd64 go build -o kraken-$KRAKEN_APP github.com/wk8/kraken-prefix-backend/$KRAKEN_APP
+RUN go build -o kraken-$KRAKEN_APP github.com/wk8/kraken-prefix-backend/$KRAKEN_APP
 
 ###
 
