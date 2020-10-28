@@ -214,8 +214,8 @@ github.com/uber-go/tally v3.3.11+incompatible/go.mod h1:YDTIBxdXyOU/sCWilKB4bgyu
 github.com/ugorji/go/codec v0.0.0-20181204163529-d75b2dcb6bc8/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/willf/bitset v0.0.0-20190228212526-18bd95f470f9 h1:WXBMTckrTcndPgRZBAEjqev+eN8MI9wbUQQUHlrUEV4=
 github.com/willf/bitset v0.0.0-20190228212526-18bd95f470f9/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
-github.com/wk8/kraken v0.0.0-20201020061850-db5ac2aa0c97 h1:FS3d++e6947omMSSVlCo86AO4yENx+UtdBaK41Nl1Us=
-github.com/wk8/kraken v0.0.0-20201020061850-db5ac2aa0c97/go.mod h1:rxKRyvXQG02fmfYacH/yxsolj9F2wtqQhTfMGwM/zlM=
+github.com/wk8/kraken v0.0.0-20201028162108-06f35bfc5ed9 h1:1WmSHsQMbJS4TqvJdIof/d1Pa+q8HxkrPK9NQilL9nM=
+github.com/wk8/kraken v0.0.0-20201028162108-06f35bfc5ed9/go.mod h1:rxKRyvXQG02fmfYacH/yxsolj9F2wtqQhTfMGwM/zlM=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
